@@ -1,25 +1,36 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="fragments::thymeleaf&thema" />
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best of the year</title>
+    <th:block th:replace="~{fragments::style}" />
+
+    <th:block th:replace="~{fragments::title(${movie.title})}" />
+
+
+
 </head>
 
 <body>
 
-    <div th:if="${movie}">
-        <h1 th:text="${movie.title}">Titolo Canzone</h1>
-    </div>
+    <header>
+        <th:block th:replace="~{fragments::navBar}" />
+    </header>
 
-    <div th:if="${errorMessage}">
-        <h1 th:text="${errorMessage}">Errore!</h1>
-    </div>
     <main>
 
+        <div th:if="${movie}">
+            <h1 class="text-primary" th:text="${movie.title}">Titolo Canzone</h1>
+        </div>
+
+        <div th:if="${errorMessage}">
+            <h1 class="text-primary" th:text="${errorMessage}">Errore!</h1>
+        </div>
 
     </main>
+
+
 </body>
 
 </html>

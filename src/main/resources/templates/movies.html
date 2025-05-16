@@ -1,21 +1,44 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="fragments::thymeleaf&thema"/>
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best of the year Home</title>
+    <th:block th:replace="~{fragments::style}"/>
+    <th:block th:replace="~{fragments::title('movies')}"/>
 </head>
 
 <body>
 
-    <h1 th:text="|All movies|"> </h1>
-    <ul>
+    <header>
+        <th:block th:replace="~{fragments::navBar}"/>
 
-        <li th:each="movie : ${movies}" th:text="${movie.title}"></li>
-      
+    </header>
 
-    </ul>
+    <main>
+
+         <th:block th:replace="~{fragments :: content(items=${movies}, location=${'movies'}, titleList=${'All films'})} ">
+        </th:block>
+        <!-- <div class="container align-items-center d-flex justify-content-center flex-column  my-5">
+
+            <h1 th:text="|All movies|"> </h1>
+            <ul>    
+                <li
+                    class="my-2" 
+                    th:each="movie : ${movies}"
+                >
+                    <a
+                        th:text="${movie.title}"
+                        th:href="@{movies/{movieId}(movieId=${movie.id})}"
+                    />
+                   
+                </li>
+              
+        
+            </ul>
+
+        </div> -->
+
+    </main>
 
 </body>
 

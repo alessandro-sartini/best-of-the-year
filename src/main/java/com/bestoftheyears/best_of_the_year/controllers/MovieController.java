@@ -46,7 +46,6 @@ public class MovieController {
             model.addAttribute("errorMessage",notFound);
         }
 
-        // model.addAttribute("movies", getBestMovies());
         return "singleMovie";
     }
 
