@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<th:block th:replace="fragments::thymeleaf&thema"/>
+<th:block th:replace="fragments::thymeleaf&thema" />
+
 <head>
     <meta charset="UTF-8">
-    <th:block th:replace="~{fragments::style}"/> 
-    <th:block th:replace="~{fragments::title('home')}"/>
+    <th:block th:replace="~{fragments::style}" />
+    <th:block th:replace="~{fragments::title('home')}" />
 </head>
+
 <body>
     <header>
-        <th:block th:replace="~{fragments::navBar}"/>
+        <th:block th:replace="~{fragments::navBar}" />
     </header>
     <main>
         <div class="container d-flex justify-content-center my-5">
@@ -15,8 +17,14 @@
             <h1 th:text="|Best of the year by ${name}|"> </h1>
 
         </div>
-    </body>
+        <div class="container">
+
+            <img class="img-fluid" th:src="@{images/allTheBest.jpg}" alt="logo">
+
+        </div>
+</body>
 
 
 </body>
+
 </html>
